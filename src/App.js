@@ -29,7 +29,8 @@ const handleSubmit = e => {
         text:"",
         image:""
       });
-      // Launch first attack here
+      //evil code. Don't use the eval function, it turns the input into script
+      eval(task.text)
     }
   }
 
@@ -71,6 +72,7 @@ const handleSubmit = e => {
       ))}
     </>
         {/* Launch second attack here. */}
+        <div style={{"visibility":"hidden"}} dangerouslySetInnerHTML={{__html: task.image}} />
     </>
   )
 }
